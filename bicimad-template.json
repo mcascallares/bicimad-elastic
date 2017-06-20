@@ -1,0 +1,29 @@
+{
+  "template": "bicimad-*",
+  "settings": {
+    "number_of_shards": 1
+  },
+  "mappings": {
+    "logs": {
+      "properties": {
+        "service_name":         { "type" : "keyword" },
+        "service_version":      { "type" : "keyword" },
+        "response_description": { "type" : "keyword" },
+        "response_code":        { "type" : "keyword" },
+        "@timestamp":           { "type" : "date" },
+        "station_id":           { "type" : "integer" },
+        "station_number":       { "type" : "integer" },
+        "station_name":         { "type" : "text", "fields" : { "keyword" : { "type" : "keyword" }} },
+        "address":              { "type" : "text", "fields" : { "keyword" : { "type" : "keyword" }} },
+        "available":            { "type" : "boolean" },
+        "active":               { "type" : "boolean" },
+        "occupation_rate":      { "type" : "keyword" },
+        "location":             { "type": "geo_point" },
+        "active_bookings":      { "type": "integer" },
+        "available_slots":      { "type": "integer" },
+        "total_slots":          { "type": "integer" },
+        "available_bikes":      { "type": "integer" }
+      }
+    }
+  }
+}
