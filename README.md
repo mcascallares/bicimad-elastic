@@ -26,7 +26,7 @@ logstash -f logstash.conf
 ## Importing Kibana objects
 
 1. From Management > Kibana > Index Patterns, add a new index pattern `bicimad-*` with time field `@timestamp`
-2. From the Management > Kibana > Saved Objects, import kibana.json file.
+2. From Management > Kibana > Saved Objects, import kibana.json file.
 
 
 ## Screenshots
