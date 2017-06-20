@@ -4,7 +4,7 @@
 
 BiciMAD is the public bike service in Madrid. It started in 2014 and currently, it is a popular transportation service in the Spanish capital.
 
-In this demo, we are sampling BiciMAD APIs periodically using Logstash, collecting station information like number of bikes/slots in real time, indexing them into Elasticsearch and visualise it using Kibana.
+In this demo, we are sampling BiciMAD APIs periodically using Logstash, collecting station information like number of bikes/slots in real time, indexing them into Elasticsearch and visualize it using Kibana.
 
 
 ## Requirements
