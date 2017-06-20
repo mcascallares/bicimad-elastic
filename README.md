@@ -23,6 +23,7 @@ export API_KEY="your_bicimad_api_key"
 logstash -f logstash.conf
 ```
 
+## Screenshots
 
 ## API Information
 
