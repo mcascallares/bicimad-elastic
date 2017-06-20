@@ -16,12 +16,18 @@ In this demo, we are sampling BiciMAD APIs periodically using Logstash, collecti
 - [(Optional) Elastic Basic License](https://www.elastic.co/subscriptions) for higher zoom levels in Kibana maps
 
 
-## Usage
+## Running the data import
 ```
 export API_USER="your_bicimad_api_user"
 export API_KEY="your_bicimad_api_key"
 logstash -f logstash.conf
 ```
+
+## Importing Kibana objects
+
+1. From Management > Kibana > Index Patterns, add a new index pattern `bicimad-*` with time field `@timestamp`
+2. From the Management > Kibana > Saved Objects, import kibana.json file.
+
 
 ## Screenshots
 
