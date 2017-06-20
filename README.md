@@ -25,7 +25,7 @@ logstash -f logstash.conf
 
 ## Screenshots
 
-![GitHub Logo](bicimad-elastic/screenshots/01.png)
+![Kibana](https://github.com/mcascallares/bicimad-elastic/blob/master/screenshots/01.png)
 
 ## API Information
 
