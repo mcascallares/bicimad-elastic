@@ -25,6 +25,8 @@ logstash -f logstash.conf
 
 ## Screenshots
 
+![Kibana](https://github.com/mcascallares/bicimad-elastic/blob/master/screenshots/01.png)
+
 ## API Information
 
 - [Open Data EMT Madrid](http://opendata.emtmadrid.es/getdoc/2f7fdbf1-f849-4357-9778-cbd5c4ebc27c/default.aspx)
