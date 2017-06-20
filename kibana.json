@@ -1,0 +1,139 @@
+[
+  {
+    "_id": "153c2ac0-518e-11e7-8fea-3bce425e273a",
+    "_type": "visualization",
+    "_source": {
+      "title": "BiciMAD - Available Bikes per Location",
+      "visState": "{\"aggs\":[{\"enabled\":true,\"id\":\"1\",\"params\":{\"field\":\"available_bikes\"},\"schema\":\"metric\",\"type\":\"avg\"},{\"enabled\":true,\"id\":\"2\",\"params\":{\"autoPrecision\":true,\"field\":\"location\",\"precision\":2,\"useGeocentroid\":true},\"schema\":\"segment\",\"type\":\"geohash_grid\"}],\"listeners\":{},\"params\":{\"addTooltip\":true,\"heatBlur\":15,\"heatMaxZoom\":0,\"heatMinOpacity\":0.1,\"heatNormalizeData\":true,\"heatRadius\":25,\"isDesaturated\":true,\"legendPosition\":\"bottomright\",\"mapCenter\":[0,0],\"mapType\":\"Shaded Circle Markers\",\"mapZoom\":2,\"wms\":{\"enabled\":false,\"options\":{\"attribution\":\"Maps provided by USGS\",\"format\":\"image/png\",\"layers\":\"0\",\"styles\":\"\",\"transparent\":true,\"version\":\"1.3.0\"},\"url\":\"https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WMSServer\"}},\"title\":\"BiciMAD - Available Bikes per Location\",\"type\":\"tile_map\"}",
+      "uiStateJSON": "{\"mapCenter\":[40.423820597330376,-3.6952686309814458],\"mapZoom\":14}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"bicimad-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "a2d98620-518e-11e7-8fea-3bce425e273a",
+    "_type": "visualization",
+    "_source": {
+      "title": "BiciMAD - Available Bikes per Station",
+      "visState": "{\"aggs\":[{\"enabled\":true,\"id\":\"1\",\"params\":{\"field\":\"available_bikes\"},\"schema\":\"metric\",\"type\":\"avg\"},{\"enabled\":true,\"id\":\"2\",\"params\":{\"customInterval\":\"1m\",\"extended_bounds\":{},\"field\":\"@timestamp\",\"interval\":\"auto\",\"min_doc_count\":1},\"schema\":\"segment\",\"type\":\"date_histogram\"},{\"enabled\":true,\"id\":\"3\",\"params\":{\"field\":\"station_name.keyword\",\"order\":\"desc\",\"orderBy\":\"1\",\"size\":30},\"schema\":\"group\",\"type\":\"terms\"}],\"listeners\":{},\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"labels\":{\"show\":true,\"truncate\":100},\"position\":\"bottom\",\"scale\":{\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"@timestamp per 30 seconds\"},\"type\":\"category\"}],\"defaultYExtents\":false,\"drawLinesBetweenPoints\":true,\"grid\":{\"categoryLines\":true,\"style\":{\"color\":\"#eee\"},\"valueAxis\":\"ValueAxis-1\"},\"interpolate\":\"linear\",\"legendPosition\":\"left\",\"radiusRatio\":9,\"scale\":\"linear\",\"seriesParams\":[{\"data\":{\"id\":\"1\",\"label\":\"Average available_bikes\"},\"drawLinesBetweenPoints\":true,\"interpolate\":\"cardinal\",\"lineWidth\":3,\"mode\":\"normal\",\"show\":true,\"showCircles\":false,\"type\":\"line\",\"valueAxis\":\"ValueAxis-1\"}],\"setYExtents\":false,\"showCircles\":true,\"times\":[],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"labels\":{\"filter\":false,\"rotate\":0,\"show\":true,\"truncate\":100},\"name\":\"LeftAxis-1\",\"position\":\"left\",\"scale\":{\"defaultYExtents\":true,\"mode\":\"normal\",\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"Available Bikes\"},\"type\":\"value\"}]},\"title\":\"BiciMAD - Available Bikes per Station\",\"type\":\"line\"}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"bicimad-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "c910f7d0-523b-11e7-ba45-0b28c5d6039a",
+    "_type": "visualization",
+    "_source": {
+      "title": "BiciMAD - Bikes and Slots",
+      "visState": "{\"title\":\"BiciMAD - Bikes and Slots\",\"type\":\"metrics\",\"params\":{\"id\":\"23284800-523b-11e7-ba45-0b28c5d6039a\",\"type\":\"metric\",\"series\":[{\"id\":\"23286f10-523b-11e7-ba45-0b28c5d6039a\",\"color\":\"#68BC00\",\"split_mode\":\"everything\",\"metrics\":[{\"id\":\"23286f11-523b-11e7-ba45-0b28c5d6039a\",\"type\":\"avg\",\"field\":\"available_bikes\"}],\"seperate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"number\",\"chart_type\":\"line\",\"line_width\":1,\"point_size\":1,\"fill\":0.5,\"stacked\":\"none\",\"label\":\"Available Bikes per Station\"},{\"id\":\"6ec21250-523b-11e7-ba45-0b28c5d6039a\",\"color\":\"#68BC00\",\"split_mode\":\"everything\",\"metrics\":[{\"id\":\"6ec21251-523b-11e7-ba45-0b28c5d6039a\",\"type\":\"avg\",\"field\":\"available_slots\"}],\"seperate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"number\",\"chart_type\":\"line\",\"line_width\":1,\"point_size\":1,\"fill\":0.5,\"stacked\":\"none\",\"label\":\"Available Slots per Station\"}],\"time_field\":\"@timestamp\",\"index_pattern\":\"bicimad-*\",\"interval\":\"5m\",\"axis_position\":\"left\",\"axis_formatter\":\"number\",\"show_legend\":1,\"gauge_color_rules\":[{\"id\":\"277cae00-523b-11e7-ba45-0b28c5d6039a\"}],\"gauge_width\":10,\"gauge_inner_width\":10,\"gauge_style\":\"half\",\"background_color_rules\":[{\"value\":0,\"id\":\"289f8320-523b-11e7-ba45-0b28c5d6039a\",\"color\":\"rgba(22,165,165,1)\",\"opperator\":\"gt\"},{\"value\":5,\"id\":\"ba59e0d0-523b-11e7-ba45-0b28c5d6039a\",\"color\":\"rgba(211,49,21,1)\"}],\"markdown_less\":\"\",\"markdown_css\":\"\",\"filter\":\"\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "4e060e50-523a-11e7-9d87-7317851d4fea",
+    "_type": "visualization",
+    "_source": {
+      "title": "BiciMAD - Occupation Rate",
+      "visState": "{\"title\":\"BiciMAD - Occupation Rate\",\"type\":\"metrics\",\"params\":{\"id\":\"48953140-5239-11e7-9d87-7317851d4fea\",\"type\":\"top_n\",\"series\":[{\"id\":\"48953141-5239-11e7-9d87-7317851d4fea\",\"color\":\"rgba(115,216,255,1)\",\"split_mode\":\"terms\",\"metrics\":[{\"id\":\"48953142-5239-11e7-9d87-7317851d4fea\",\"type\":\"count\",\"field\":\"total_slots\"}],\"seperate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"number\",\"chart_type\":\"line\",\"line_width\":1,\"point_size\":1,\"fill\":0.5,\"stacked\":\"none\",\"terms_field\":\"occupation_rate\",\"label\":\"Occupation Rate\",\"terms_size\":\"50\",\"terms_order_by\":\"48953142-5239-11e7-9d87-7317851d4fea\"}],\"time_field\":\"@timestamp\",\"index_pattern\":\"bicimad-*\",\"interval\":\"auto\",\"axis_position\":\"left\",\"axis_formatter\":\"number\",\"show_legend\":1,\"background_color_rules\":[{\"id\":\"4a376f90-5239-11e7-9d87-7317851d4fea\"}],\"bar_color_rules\":[{\"id\":\"4b2db670-5239-11e7-9d87-7317851d4fea\"}],\"gauge_color_rules\":[{\"id\":\"4bc20730-5239-11e7-9d87-7317851d4fea\"}],\"gauge_width\":10,\"gauge_inner_width\":10,\"gauge_style\":\"half\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "3cc7eaa0-51b3-11e7-9f3f-1fe9734d8b36",
+    "_type": "visualization",
+    "_source": {
+      "title": "BiciMAD - Available Slots per Station",
+      "visState": "{\"title\":\"BiciMAD - Available Slots per Station\",\"type\":\"metrics\",\"params\":{\"id\":\"4d7262a0-51b2-11e7-9f3f-1fe9734d8b36\",\"type\":\"top_n\",\"series\":[{\"id\":\"4d7262a1-51b2-11e7-9f3f-1fe9734d8b36\",\"color\":\"rgba(0,156,224,1)\",\"split_mode\":\"terms\",\"metrics\":[{\"id\":\"4d7262a2-51b2-11e7-9f3f-1fe9734d8b36\",\"type\":\"avg\",\"field\":\"available_slots\"}],\"seperate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"number\",\"chart_type\":\"line\",\"line_width\":1,\"point_size\":1,\"fill\":0.5,\"stacked\":\"none\",\"label\":\"Stations\",\"terms_field\":\"station_name.keyword\",\"terms_size\":\"30\",\"terms_order_by\":\"4d7262a2-51b2-11e7-9f3f-1fe9734d8b36\"}],\"time_field\":\"@timestamp\",\"index_pattern\":\"bicimad-*\",\"interval\":\"auto\",\"axis_position\":\"left\",\"axis_formatter\":\"number\",\"show_legend\":1,\"background_color_rules\":[{\"id\":\"4ecb8a00-51b2-11e7-9f3f-1fe9734d8b36\"}],\"bar_color_rules\":[{\"id\":\"724d8140-51b2-11e7-9f3f-1fe9734d8b36\"}]},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "647e2040-51b4-11e7-92d4-25bfec115684",
+    "_type": "visualization",
+    "_source": {
+      "title": "BiciMAD - Stations",
+      "visState": "{\"title\":\"BiciMAD - Stations\",\"type\":\"metrics\",\"params\":{\"id\":\"440e7210-51b4-11e7-92d4-25bfec115684\",\"type\":\"gauge\",\"series\":[{\"id\":\"440e7211-51b4-11e7-92d4-25bfec115684\",\"color\":\"rgba(0,98,177,1)\",\"split_mode\":\"everything\",\"metrics\":[{\"id\":\"440e7212-51b4-11e7-92d4-25bfec115684\",\"type\":\"cardinality\",\"field\":\"station_name.keyword\"}],\"seperate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"number\",\"chart_type\":\"line\",\"line_width\":1,\"point_size\":1,\"fill\":0.5,\"stacked\":\"none\",\"label\":\"Stations\"}],\"time_field\":\"@timestamp\",\"index_pattern\":\"bicimad-*\",\"interval\":\"auto\",\"axis_position\":\"left\",\"axis_formatter\":\"number\",\"show_legend\":1,\"gauge_color_rules\":[{\"id\":\"4545e0a0-51b4-11e7-92d4-25bfec115684\"}],\"gauge_width\":10,\"gauge_inner_width\":10,\"gauge_style\":\"half\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "b5eba5f0-51a6-11e7-b082-cd7b10c9bb54",
+    "_type": "visualization",
+    "_source": {
+      "title": "BiciMAD - Most Used Stations",
+      "visState": "{\"title\":\"BiciMAD - Most Used Stations\",\"type\":\"tagcloud\",\"params\":{\"maxFontSize\":72,\"minFontSize\":11,\"orientation\":\"single\",\"scale\":\"log\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"min\",\"schema\":\"metric\",\"params\":{\"field\":\"available_bikes\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"station_name.keyword\",\"size\":15,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"bicimad-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "cec95280-51aa-11e7-99e4-dbd45c0e7156",
+    "_type": "visualization",
+    "_source": {
+      "title": "BiciMAD - Summary",
+      "visState": "{\"title\":\"BiciMAD - Summary\",\"type\":\"markdown\",\"params\":{\"markdown\":\"# BiciMAD\\n\\n![alt text](http://cdn.traveler.es/uploads/images/thumbs/201426/bicimad_4972_200x200.jpg \\\"Logo Title Text 1\\\")\\n\\n[BiciMAD](https://www.bicimad.com/) is the public bike service in Madrid. It started in 2014 and currently, it is a popular transportation service in the Spanish capital.\\n\\nIn this demo, we are collecting information from BiciMAD stations in real time and visualise it interactively using Kibana.\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "c3e35170-518e-11e7-8fea-3bce425e273a",
+    "_type": "dashboard",
+    "_source": {
+      "title": "BiciMAD",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"a2d98620-518e-11e7-8fea-3bce425e273a\",\"panelIndex\":2,\"row\":7,\"size_x\":12,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"153c2ac0-518e-11e7-8fea-3bce425e273a\",\"panelIndex\":3,\"row\":1,\"size_x\":6,\"size_y\":6,\"type\":\"visualization\"},{\"col\":1,\"id\":\"b5eba5f0-51a6-11e7-b082-cd7b10c9bb54\",\"panelIndex\":5,\"row\":10,\"size_x\":6,\"size_y\":7,\"type\":\"visualization\"},{\"col\":1,\"id\":\"cec95280-51aa-11e7-99e4-dbd45c0e7156\",\"panelIndex\":6,\"row\":1,\"size_x\":2,\"size_y\":6,\"type\":\"visualization\"},{\"col\":7,\"id\":\"3cc7eaa0-51b3-11e7-9f3f-1fe9734d8b36\",\"panelIndex\":7,\"row\":10,\"size_x\":6,\"size_y\":7,\"type\":\"visualization\"},{\"col\":3,\"id\":\"647e2040-51b4-11e7-92d4-25bfec115684\",\"panelIndex\":8,\"row\":3,\"size_x\":4,\"size_y\":2,\"type\":\"visualization\"},{\"col\":3,\"id\":\"4e060e50-523a-11e7-9d87-7317851d4fea\",\"panelIndex\":9,\"row\":5,\"size_x\":4,\"size_y\":2,\"type\":\"visualization\"},{\"col\":3,\"id\":\"c910f7d0-523b-11e7-ba45-0b28c5d6039a\",\"panelIndex\":10,\"row\":1,\"size_x\":4,\"size_y\":2,\"type\":\"visualization\"}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{\"P-3\":{\"mapCenter\":[40.43858586704328,-3.690247535705566],\"mapZoom\":14}}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-30m",
+      "refreshInterval": {
+        "display": "5 minutes",
+        "pause": false,
+        "section": 2,
+        "value": 300000
+      },
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}],\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  }
+]
